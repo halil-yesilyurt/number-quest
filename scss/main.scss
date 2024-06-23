@@ -52,6 +52,7 @@ header {
   @include flex-vertical;
   text-align: center;
   position: relative;
+  padding: 0 2rem;
   h1 {
     color: $color-yellow;
     font-size: 6rem;
@@ -79,6 +80,8 @@ main {
   justify-content: space-around;
   align-items: center;
   padding: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   .message-box {
     color: $color-light;
     font-size: $font-big;
@@ -114,9 +117,19 @@ main {
     }
   }
 }
+.message {
+  color: $color-light;
+  font-size: $font-big;
+  @include flex-center;
+}
 .btn-again {
   @extend %btn-shared;
   align-self: center;
   width: 15rem;
-  background: linear-gradient(0deg, #ad5389 0%, #ad5389 100%);
+  background: linear-gradient(0deg, $color-pink 0%, $color-pink 100%);
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 47.5%;
+  }
 }
