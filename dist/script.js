@@ -41,8 +41,24 @@ function checkNumber() {
       showMessage('You lost the game', '#000');
       scoreEl.textContent = 0;
       document.querySelector('body').style.backgroundImage = 'linear-gradient(to right, #33001b, #ff0084)';
+      btnCheck.disabled = true;
+      document.querySelector('.guess').readOnly = true;
     }
   }
 }
 
+function tryAgain() {
+  score = 30;
+  scoreEl.textContent = score;
+  document.querySelector('.guess').value = '';
+  showMessage('Guess a number!');
+  luckyNumber = createNumber();
+  document.querySelector('body').style.backgroundImage = 'linear-gradient(to right, #8360c3, #2ebf91)';
+  number.textContent = '?';
+  number.style.width = '9rem';
+  btnCheck.disabled = false;
+  document.querySelector('.guess').readOnly = false;
+}
+
 btnCheck.addEventListener('click', checkNumber);
+btnAgain.addEventListener('click', tryAgain);
