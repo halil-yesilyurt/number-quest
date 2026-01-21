@@ -12,5 +12,8 @@
   "dependencies": {
     "node-sass": "^9.0.0",
     "sass": "^1.77.6"
+  },
+  "overrides": {
+    "tar": "^7.5.4"
   }
 }
